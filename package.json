@@ -1,0 +1,39 @@
+{
+  "name": "typeorm-electron-javascript-example",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Umed Khudoiberdiev",
+    "email": "pleerock.me@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/typeorm/electron-javascript-example.git"
+  },
+  "bugs": {
+    "url": "https://github.com/typeorm/electron-javascript-example/issues"
+  },
+  "tags": [
+    "orm",
+    "typescript",
+    "typescript-orm",
+    "electron-orm",
+    "typeorm-sample",
+    "typeorm-example"
+  ],
+  "dependencies": {
+    "electron": "^1.8.4",
+    "sqlite3": "^4.0.0",
+    "typeorm": "^0.2.0-alpha.46"
+  },
+  "devDependencies": {
+    "electron-builder": "^20.8.1",
+    "typescript": "^2.8.1"
+  },
+  "scripts": {
+    "start": "tsc && electron src/index.js",
+    "postinstall": "install-app-deps"
+  }
+}

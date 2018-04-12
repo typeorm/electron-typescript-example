@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electron App</title>
+</head>
+<body>
+
+<h1>Posts:</h1>
+
+<ul id="postList"></ul>
+
+<small>Refresh and you'll see a new post added.</small>
+
+<script>
+    var typeorm = require("typeorm");
+    typeorm.createConnection().then(() => {
+        var post = {
+            title: "post title",
+            text: "post text"
+
+        };
+        return typeorm.getRepository("Post").save(post);
+
+    }).then(() => {
+        console.log("Saved successfully!");
+        return typeorm.getRepository("Post").find();
+
+    }).then(posts => {
+        console.log("Posts: ", posts);
+
+        let ul = document.getElementById("postList");
+        posts.forEach(post => {
+            var li = document.createElement('li');
+            li.innerText = post.id + ". " + post.title;
+            ul.appendChild(li);
+        });
+
+    }).catch(error => {
+        console.error("Error: ", error);
+    });
+</script>
+
+</body>
+</html>
