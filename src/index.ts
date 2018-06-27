@@ -1,3 +1,5 @@
+import {createConnection} from "typeorm";
+
 var electron = require("electron");
 var url = require("url");
 
@@ -9,4 +11,11 @@ electron.app.on("ready", () => {
         slashes: true
     }));
     mainWindow.toggleDevTools();
+    setTimeout(() => {
+        console.log("You can also get posts from the second process:");
+        createConnection().then(async connection => {
+            const posts = await connection.getRepository("Post").find();
+            console.log("posts:", posts);
+        });
+    }, 5000);
 });
