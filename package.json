@@ -26,11 +26,11 @@
   "dependencies": {
     "electron": "^1.8.4",
     "sqlite3": "^4.0.0",
-    "typeorm": "^0.2.0"
+    "typeorm": "^0.2.15"
   },
   "devDependencies": {
     "electron-builder": "^20.8.1",
-    "typescript": "^2.8.1"
+    "typescript": "^3.3.3333"
   },
   "scripts": {
     "start": "tsc && electron src/index.js",
