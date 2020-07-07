@@ -24,7 +24,7 @@
     "typeorm-example"
   ],
   "dependencies": {
-    "electron": "^1.8.4",
+    "electron": "^9.1.0",
     "sqlite3": "^4.0.0",
     "typeorm": "^0.2.15"
   },
